@@ -1,0 +1,66 @@
+public class UC7 {
+
+    // Static Inner Class
+    static class CharacterPattern {
+
+        private char character;
+        private String[] pattern;
+
+        // Constructor
+        public CharacterPattern(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        // Getter
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Creating objects for O, P, S
+        CharacterPattern O = new CharacterPattern('O', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        });
+
+        CharacterPattern P = new CharacterPattern('P', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                " ***** ",
+                "*       ",
+                "*       ",
+                "*       "
+        });
+
+        CharacterPattern S = new CharacterPattern('S', new String[]{
+                " ***** ",
+                "*       ",
+                "*       ",
+                " ***** ",
+                "      *",
+                "      *",
+                " ***** "
+        });
+
+        String[] oPattern = O.getPattern();
+        String[] pPattern = P.getPattern();
+        String[] sPattern = S.getPattern();
+
+        // Printing OOPS
+        for (int i = 0; i < oPattern.length; i++) {
+            System.out.println(oPattern[i] + "  "
+                    + oPattern[i] + "  "
+                    + pPattern[i] + "  "
+                    + sPattern[i]);
+        }
+    }
+}
